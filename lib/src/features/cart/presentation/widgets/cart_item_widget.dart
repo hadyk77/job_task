@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:job_task/src/features/cart/presentation/controllers/cart_controller.dart';
 
 import '../../../../core/theme/colors/colors.dart';
 import '../../../../core/theme/colors/hex_colors.dart';
 import '../../../../core/theme/fonts_styles/font_style.dart';
-import '../../../../public_controllers.dart';
 import '../../domain/entities/cart_item.dart';
 
 class CartItemWidget extends StatelessWidget {
@@ -17,6 +18,7 @@ class CartItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartController = Get.find<CartController>();
     return Padding(
       padding: const EdgeInsets.only(bottom: 30),
       child: Row(

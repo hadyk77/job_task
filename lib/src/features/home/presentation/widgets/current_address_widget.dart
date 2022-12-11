@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
+import 'package:job_task/src/features/addresses/presentation/controllers/address_controller.dart';
 
 import '../../../../../gen/assets.gen.dart';
 import '../../../../core/theme/fonts_styles/font_style.dart';
-import '../../../../public_controllers.dart';
 
 class CurrentAddressWidget extends StatelessWidget {
   const CurrentAddressWidget({
@@ -12,6 +12,7 @@ class CurrentAddressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final addressController = Get.find<AddressController>();
     return Stack(
       fit: StackFit.loose,
       children: [

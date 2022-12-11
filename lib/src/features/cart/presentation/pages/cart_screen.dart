@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
+import 'package:job_task/src/features/cart/presentation/controllers/cart_controller.dart';
+
 import '../../../../core/theme/fonts_styles/font_style.dart';
 import '../../../home/presentation/widgets/current_address_widget.dart';
 import '../../../home/presentation/widgets/user_profile_image_widget.dart';
-
-import '../../../../public_controllers.dart';
 import '../widgets/cart_item_widget.dart';
 
 class CartScreen extends StatefulWidget {
@@ -16,6 +16,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  final cartController = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

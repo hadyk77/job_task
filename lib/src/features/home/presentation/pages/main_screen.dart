@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:job_task/src/features/cart/presentation/controllers/cart_controller.dart';
+
 import '../../../../../gen/assets.gen.dart';
 import '../../../../core/theme/colors/colors.dart';
 import '../../../cart/presentation/pages/cart_screen.dart';
-import 'home_screen.dart';
-
-import '../../../../public_controllers.dart';
 import '../widgets/bottom_nav_bar_widget.dart';
+import 'home_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -39,7 +39,14 @@ class _MainScreenState extends State<MainScreen> {
   final _currentIndex = 0.obs;
 
   @override
+  void initState() {
+    Get.put<CartController>(CartController());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final cartController = Get.find<CartController>();
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'address_item_widget.dart';
+import 'package:job_task/src/features/addresses/presentation/controllers/address_controller.dart';
 
-import '../../../../public_controllers.dart';
+import 'address_item_widget.dart';
 
 class AddressListWidget extends StatelessWidget {
   const AddressListWidget({
@@ -11,6 +11,7 @@ class AddressListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final addressController = Get.find<AddressController>();
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Obx(

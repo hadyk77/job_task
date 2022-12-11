@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:job_task/src/features/deals/presentation/controllers/deals_controller.dart';
 
-import '../../../../public_controllers.dart';
 import 'deal_widget.dart';
 
 class DealListWidget extends StatelessWidget {
@@ -11,6 +11,7 @@ class DealListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dealsController = Get.find<DealsController>();
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Obx(

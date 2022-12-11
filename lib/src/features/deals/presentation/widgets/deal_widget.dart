@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../domain/entities/deal.dart';
+import 'package:get/get.dart';
+import 'package:job_task/src/features/cart/presentation/controllers/cart_controller.dart';
+import 'package:job_task/src/features/deals/presentation/controllers/deals_controller.dart';
 
 import '../../../../../gen/assets.gen.dart';
 import '../../../../core/theme/colors/colors.dart';
 import '../../../../core/theme/colors/hex_colors.dart';
 import '../../../../core/theme/fonts_styles/font_style.dart';
-import '../../../../public_controllers.dart';
+import '../../domain/entities/deal.dart';
 
 class DealWidget extends StatelessWidget {
   const DealWidget({
@@ -16,6 +18,8 @@ class DealWidget extends StatelessWidget {
   final Deal deal;
   @override
   Widget build(BuildContext context) {
+    final dealsController = Get.find<DealsController>();
+    final cartController = Get.find<CartController>();
     return Row(
       children: [
         SizedBox(

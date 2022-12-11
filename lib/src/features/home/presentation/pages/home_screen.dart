@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:job_task/src/features/addresses/presentation/controllers/address_controller.dart';
+import 'package:job_task/src/features/categories/presentation/controllers/categories_controller.dart';
+import 'package:job_task/src/features/deals/presentation/controllers/deals_controller.dart';
+import 'package:job_task/src/features/offers/presentation/controllers/offers_controller.dart';
+
 import '../../../../core/theme/colors/hex_colors.dart';
 import '../../../../core/theme/fonts_styles/font_style.dart';
-import '../widgets/current_address_widget.dart';
-
-import '../../../../public_controllers.dart';
+import '../../../../dependency_injection.dart';
 import '../../../addresses/presentation/widgets/address_list_widget.dart';
 import '../../../categories/presentation/widgets/category_list_widget.dart';
 import '../../../core/presentation/widgets/text_field_widget.dart';
 import '../../../deals/presentation/widgets/deal_list_widget.dart';
 import '../../../offers/presentation/widgets/offer_list_widget.dart';
+import '../widgets/current_address_widget.dart';
 import '../widgets/user_profile_image_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,10 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    addressController.getAddress();
-    categoriesController.get();
-    dealsController.get();
-    offerControlller.get();
+
+    Get.put(AddressController(dpi())).getAddress();
+
+    Get.put(CategoriesController(dpi())).get();
+
+    Get.put(DealsController(dpi())).get();
+
+    Get.put(OffersController(dpi())).get();
   }
 
   @override

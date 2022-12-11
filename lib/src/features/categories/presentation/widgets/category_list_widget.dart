@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:job_task/src/features/categories/presentation/controllers/categories_controller.dart';
 
-import '../../../../public_controllers.dart';
 import 'category_widget.dart';
 
 class CategoryListWidget extends StatelessWidget {
@@ -11,6 +11,7 @@ class CategoryListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categoriesController = Get.find<CategoriesController>();
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Obx(
