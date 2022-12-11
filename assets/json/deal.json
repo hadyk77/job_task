@@ -1,0 +1,23 @@
+{
+    "deals":[
+        {
+            "id":1,
+            "name":"Summer Sun Ice Cream Pack",
+            "pieces":5,
+            "price":18,
+            "price_after_discount":12,
+            "minutes_away":15,
+            "color":"#F5E5CE"
+
+        },
+        {
+            "id":2,
+            "name":"Orange Juice",
+            "pieces":1,
+            "price":20,
+            "price_after_discount":15,
+            "minutes_away":15,
+            "color":"#28D193"
+        }
+    ]
+}
